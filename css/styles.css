@@ -614,6 +614,7 @@ textarea {
     max-width: 360px;
     max-height: 336px;
     gap: 8px;
+    margin-bottom: 16px;
 }
 
 .form-element {
@@ -678,6 +679,10 @@ textarea {
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     outline: none;
+}
+
+.signup-checkbox {
+    margin-bottom: 24px;
 }
 
 .signup-title {

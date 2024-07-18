@@ -516,8 +516,8 @@ img {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-overlay.is-open {
@@ -559,8 +559,8 @@ img {
     right: 24px;
     padding: 0;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-            border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .modal-close-button:hover,
 .modal-close-button:focus {
@@ -572,7 +572,7 @@ img {
 .modal-icon {
     fill: #2e2f42;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
- }
+}
 
 .modal-close-button:hover .modal-icon,
 .modal-close-button:focus .modal-icon {
@@ -605,7 +605,6 @@ textarea {
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
-    padding: 8px 16px;
 
 }
 
@@ -621,7 +620,7 @@ textarea {
 .form-element {
     display: flex;
     flex-direction: column;
-    
+
 }
 
 .form-element label {
@@ -680,6 +679,17 @@ textarea {
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     outline: none;
+    padding-left: 38px;
+}
+
+.form-texarea {
+    border: none;
+    width: 360px;
+    height: 120px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    outline: none;
+    padding: 8px 16px;
 }
 
 .signup-checkbox {
@@ -696,7 +706,7 @@ textarea {
     gap: 8px;
 }
 
-.signup-title span{
+.signup-title span {
     width: 16px;
     height: 16px;
     border-radius: 2px;
@@ -708,7 +718,7 @@ textarea {
     fill: transparent;
 }
 
-.modal-check:checked + .signup-title span {
+.modal-check:checked+.signup-title span {
     background-color: #404BBF;
     border: none;
     fill: #F4F4FD;

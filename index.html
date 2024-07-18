@@ -462,9 +462,9 @@
     </footer>
 
 
-    <div class="modal-overlay">
+    <div class="modal-overlay is-open">
         <div class="modal">
-            <button class="close-button" type="close-button">
+            <button class="modal-close-button" type="button">
                 <svg class="modal-icon" width="8" height="8">
                     <use href="./images/icons.svg#icon-close-black"></use>
                 </svg>
@@ -476,7 +476,7 @@
                 <div class="form-element">
                     <label for="input-name">Name</label>
                     <div class="input-wrapper">
-                        <input class="form-input" name="input-name" id="user-name" type="text" autofocus>
+                        <input class="form-input" name="input-name" id="input-name" type="text" autofocus>
                         <svg class="form-icon" width="18" height="24">
                             <use href="./images/icons.svg#icon-person-black"></use>
                         </svg>
@@ -486,7 +486,7 @@
                 <div class="form-element">
                     <label for="input-phone">Phone</label>
                     <div class="input-wrapper">
-                        <input class="form-input" name="input-phone" id="user-phone" type="phone" required>
+                        <input class="form-input" name="input-phone" id="input-phone" type="phone" required>
                         <svg class="form-icon" width="18" height="24">
                             <use href="./images/icons.svg#icon-phone-black"></use>
                         </svg>
@@ -496,7 +496,7 @@
                 <div class="form-element">
                     <label for="input-email">Email</label>
                     <div class="input-wrapper">
-                        <input class="form-input" name="input-email" id="user-email" type="email" required>
+                        <input class="form-input" name="input-email" id="input-email" type="email" required>
                         <svg class="form-icon" width="18" height="24">
                             <use href="./images/icons.svg#icon-email-black"></use>
                         </svg>
@@ -506,29 +506,34 @@
                 <div class="form-element">
                     <label for="input-comment">Comment</label>
                     <div class="input-wrapper">
-                        <textarea class="form-input" name="comments" id="user-comments"
+                        <textarea class="form-input" name="comments" id="input-comments"
                             placeholder="Text input"></textarea>
                     </div>
                 </div>
 
                 <div class="signup-checkbox">
                     <div class="check">
-                        <input type="checkbox" name="signup" id="signup" class="checkbox">
+                        <input type="checkbox" name="signup" id="signup" class="modal-check visually-hidden">
                     </div>
 
-                    <label for="signup" class="signup-title">I accept the terms and conditions of the
-                        <a class="signup-privacy" href="">Privacy Policy</a>
+                    <label for="signup" class="signup-title"><span>
+                        <svg width="10" height="8">
+                            <use href="./images/icons.svg#icon-check"></use>
+                        </svg>
+                    </span>I accept the terms and conditions of the<a class="signup-privacy" href="">Privacy Policy</a>
                     </label>
                 </div>
 
-                <div class="form-button">
-                    <button type="submit">Send</button>
+                <div class="submit">
+                    <button class="button" type="button">Send</button>
                 </div>
 
         </div>
     </div>
 
     </form>
+
+    <script src="./js/modal.js"></script>
 
 </body>
 

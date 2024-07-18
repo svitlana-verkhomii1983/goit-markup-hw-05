@@ -173,7 +173,7 @@ img {
 
 }
 
-button {
+.button {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -192,8 +192,8 @@ button {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button:hover,
-button:focus {
+.button:hover,
+.button:focus {
     background-color: #404BBF;
     color: #ffffff;
 }
@@ -503,51 +503,79 @@ button:focus {
     width: 264px;
 }
 
+
+
 .modal-overlay {
     background-color: rgba(46, 47, 66, 0.4);
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .modal {
     position: absolute;
     background-color: #FCFCFC;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
     border-radius: 4px;
     width: 408px;
-    height: 584px;
-
+    min-height: 584px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
-.close-button {
-    background-color: #FCFCFC;
-    border-radius: 4px;
+.modal-overlay:not(.is-open) .modal {
+    transform: translate(-50%, -50%) scale (1.5);
+}
+
+.modal-close-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     width: 24px;
     height: 24px;
-    cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    align-self: flex-end;
-}
+    top: 24px;
+    right: 24px;
+    padding: 0;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.close-button:hover,
-.close-button:focus {
+.modal-close-button:hover,
+.modal-close-button:focus {
     background-color: #404bbf;
-    fill: #ffffff;
+    border: none;
 
 }
 
 .modal-icon {
-    fill: #ffffff;
+    fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+.modal-close-button:hover .modal-icon,
+.modal-close-button:focus .modal-icon {
+    fill: #e7e9fc;
 }
 
 .modal-title {
@@ -571,20 +599,27 @@ textarea {
     resize: none;
 }
 
+.form-element textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    padding: 8px 16px;
+
+}
+
 .form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     max-width: 360px;
     max-height: 336px;
-    margin-bottom: 16px;
+    gap: 8px;
 }
 
 .form-element {
     display: flex;
     flex-direction: column;
-    margin-bottom: 8px;
-    padding-bottom: 4px;
+    
 }
 
 .form-element label {
@@ -598,8 +633,9 @@ textarea {
 }
 
 .input-wrapper,
-.input-comments-wrapper {
+.input-comments {
     position: relative;
+
 
 }
 
@@ -609,6 +645,7 @@ textarea {
     left: 12px;
     transform: translateY(-50%);
     cursor: pointer;
+    fill: #2e2f42;
 }
 
 .form-element input {
@@ -619,6 +656,7 @@ textarea {
     padding-left: 42px;
     border-radius: 4px;
     outline: none;
+    padding-left: 38px;
 }
 
 .form-element input:focus {
@@ -640,4 +678,39 @@ textarea {
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     outline: none;
+}
+
+.signup-title {
+    display: flex;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    align-items: center;
+    gap: 8px;
+}
+
+.signup-title span{
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+}
+
+.modal-check:checked + .signup-title span {
+    background-color: #404BBF;
+    border: none;
+    fill: #F4F4FD;
+}
+
+.signup-privacy {
+    line-height: 1.33;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #4d5ae5;
 }

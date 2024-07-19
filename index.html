@@ -51,7 +51,7 @@
         <section class="section-main">
             <div class="container section-container">
                 <h1 class="section-main-title">Effective Solutions for Your Business</h1>
-                <button class="button" type="button">Order Service</button>
+                <button class="button" type="button" data-modal-open>Order Service</button>
             </div>
         </section>
 
@@ -446,25 +446,24 @@
             </div>
 
             <div class="footer-subscribe">
-                <label class="footer-subscribe-text" for="subscribe">Subscribe</label>
-                <div class="input-subscribe-text">
-                    <input class="form-input-subscribe" name="input-email" id="user-email" type="email"
-                        placeholder="E-mail" required>
-                    <button type="subscribe-submit">Subscribe
-                        <svg class="subscribe-submit-icon" width="24" height="24">
+                <p class="footer-text">Subscribe</p>
+                <form class="form-footer" action="" method="post" name="contacts" autocomplete="off">
+                    <label><input class="form-subscribe" name="input-email" id="user-email" type="email"
+                        placeholder="E-mail" required></label>
+                    <button class="button-footer" type="button"><p>Subscribe</p>
+                        <svg class="subscribe-submit-icon" width="24" height="20">
                             <use href="./images/icons.svg#icon-frame"></use>
                         </svg>
                     </button>
                 </div>
-
-
+                </form>
             </div>
     </footer>
 
 
-    <div class="modal-overlay is-open">
+    <div class="modal-overlay" data-modal>
         <div class="modal">
-            <button class="modal-close-button" type="button">
+            <button class="modal-close-button" type="button" data-modal-close>
                 <svg class="modal-icon" width="8" height="8">
                     <use href="./images/icons.svg#icon-close-black"></use>
                 </svg>

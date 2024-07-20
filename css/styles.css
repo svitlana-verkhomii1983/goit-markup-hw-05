@@ -735,6 +735,10 @@ textarea {
     fill: #4d5ae5;
 }
 
+.form-texarea::placeholder {
+    color :rgba(46, 47, 66, 0.4);
+}
+
 .form-element input:focus::placeholder {
     color: #4d5ae5;
 }

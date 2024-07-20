@@ -173,7 +173,8 @@ img {
 
 }
 
-.button {
+.button,
+.submit-button {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -194,7 +195,9 @@ img {
 }
 
 .button:hover,
-.button:focus {
+.button:focus,
+.submit-button:hover,
+.submit-button:focus {
     background-color: #404BBF;
     color: #ffffff;
 }
@@ -498,10 +501,11 @@ img {
 }
 
 .footer-text {
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #f4f4fd;
+    color: #ffffff;
     width: 264px;
     margin-bottom: 16px;
 }
@@ -509,6 +513,7 @@ img {
 
 .form-footer {
     display: flex;
+    gap: 24px;
 }
 
 .footer-subscribe {
@@ -516,26 +521,26 @@ img {
 }
 
 .subscribe-submit-icon {
-    fill: #fff;
+    fill: #ffffff;
 }
 
 .form-subscribe {
-    border: 1px solid #fff;
+    border: 1px solid #ffffff;
     border-radius: 4px;
     width: 264px;
     height: 40px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    background-color: #2e2f42;
-    margin-right: 24px;
-}
-
-.footer-subscribe input::placeholder {
-    font-weight: 400;
+    background-color: transparent;
     font-size: 12px;
     line-height: 2;
     letter-spacing: 0.04em;
-    color: #fff;
+    color: #ffffff;
     padding: 8px 16px;
+
+}
+
+.form-footer input::placeholder {
+    color: #ffffff;
 }
 
 .button-footer {
@@ -543,10 +548,9 @@ img {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 16px;
     border-radius: 4px;
     padding: 8px 24px;
-    width: 165px;
+    min-width: 165px;
     height: 40px;
     background-color: #4d5ae5;
     font-weight: 500;
@@ -554,15 +558,21 @@ img {
     line-height: 1.5;
     letter-spacing: 0.04em;
     text-align: center;
-    color: #fff;
+    color: #ffffff;
     border: none;
+    cursor: pointer;
 }
-
 
 .button-footer:hover,
 .button-footer:focus {
     background-color: #31d0aa;
     color: #ffffff;
+}
+
+.subscribe-submit-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
 }
 
 .modal-overlay {
@@ -619,13 +629,14 @@ img {
     padding: 0;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }
 
 .modal-close-button:hover,
 .modal-close-button:focus {
     background-color: #404bbf;
     border: none;
-
+    color: #ffffff;
 }
 
 .modal-icon {
@@ -655,10 +666,6 @@ textarea {
     line-height: inherit;
 }
 
-textarea {
-    resize: none;
-}
-
 .form-element textarea::placeholder {
     font-size: 12px;
     line-height: 1.17;
@@ -670,30 +677,29 @@ textarea {
 .form {
     display: flex;
     flex-direction: column;
-    max-width: 360px;
-    max-height: 336px;
-    gap: 8px;
-    margin-bottom: 16px;
+    max-width: 408px;
+    max-height: 584px;
 }
 
 .form-element {
     display: flex;
     flex-direction: column;
-
+    margin-bottom: 8px;
 }
 
-.form-element label {
+.form-element label,
+.form-element-comments label {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
-    padding-bottom: 4px;
+    line-height: 1.17;
+    margin-bottom: 4px;
 }
 
-.input-wrapper,
-.input-comments {
+.input-wrapper {
     position: relative;
 }
 
@@ -704,6 +710,8 @@ textarea {
     transform: translateY(-50%);
     cursor: pointer;
     fill: #2e2f42;
+    left: 16px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-element input {
@@ -715,6 +723,8 @@ textarea {
     border-radius: 4px;
     outline: none;
     padding-left: 38px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-element input:focus {
@@ -741,19 +751,37 @@ textarea {
 
 .form-texarea {
     border: none;
-    width: 360px;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
     height: 120px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     outline: none;
     padding: 8px 16px;
+    background-color: transparent;
+    outline: transparent;
+    resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.signup-checkbox {
+.form-element-coments textarea:focus {
+    border-color: #4D5AE5;
+}
+
+.form-element-comments {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 16px;
 }
 
-.signup-title {
+.signup-checkbox {
+    margin-bottom: 24px;
+}
+
+.signup {
     display: flex;
     font-size: 12px;
     line-height: 1.17;
@@ -763,19 +791,22 @@ textarea {
     gap: 8px;
 }
 
-.signup-title span {
+.signup span {
     width: 16px;
     height: 16px;
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     margin-right: 8px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-check:checked+.signup-title span {
+.modal-check:checked+.signup span {
     background-color: #404BBF;
     border: none;
     fill: #F4F4FD;
